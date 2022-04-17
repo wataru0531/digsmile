@@ -1,0 +1,20 @@
+/*******************************************************
+
+.c-tag-category
+
+********************************************************/
+@use './global/' as *;
+
+.c-tag-category{
+  padding-top: rem(5);
+  padding-bottom: rem(5);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: $text;
+  background-color: $gold;
+}

@@ -1,0 +1,20 @@
+/*******************************************************
+
+.p-breadcrumb
+
+********************************************************/
+@use './global/' as *;
+
+.p-breadcrumb{
+  padding-top: rem(15);
+  padding-bottom: rem(15);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.2;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

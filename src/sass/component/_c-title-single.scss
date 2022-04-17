@@ -1,0 +1,16 @@
+/*******************************************************
+
+.c-title-single  ブログ記事のタイトル部分
+
+********************************************************/
+@use './global/' as *;
+
+.c-title-single{
+  padding-left: rem(20);
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+  border-left: rem(5) solid $text;
+}

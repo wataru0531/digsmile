@@ -1,0 +1,93 @@
+/*******************************************************
+
+.p-blog-single  ブログ詳細ページ
+
+********************************************************/
+@use './global/' as *;
+
+
+.p-blog-single__header{
+  padding-left: rem(20);
+  border-left: rem(5) solid $text;
+}
+
+.p-blog-single__title{
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-blog-single__info{
+  text-align: right;
+}
+
+// カテゴリー
+.p-blog-single__category{
+  margin-right: rem(20);
+  padding-left: rem(15);
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  position: relative;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+.p-blog-single__category::before{
+  content: '';
+  display: block;
+  width: rem(10);
+  height: rem(1);
+  background-color: $gold;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+// タイム
+.p-blog-single__time{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-blog-single__img{
+  margin-top: rem(30);
+  overflow: hidden;
+  position: relative;
+}
+
+.p-blog-single__img::before{
+  content: '';
+  display: block;
+  padding-top: 67.246376811%;
+}
+
+// 画像
+.p-blog-single__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// コンテンツ部分
+.p-blog-single__contents{
+  margin-top: rem(30);
+}

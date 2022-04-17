@@ -1,0 +1,64 @@
+/*******************************************************
+
+.p-vision
+
+********************************************************/
+@use './global/' as *;
+
+.p-vision__inner{
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: rem(20);
+  padding-left: rem(20);
+  width: 100%;
+  max-width: rem(518);
+
+  @include mq('tab'){
+    padding-right: rem(25);
+    padding-left: rem(25);
+  }
+  @include mq('pc'){
+    max-width: rem(701);
+  }
+}
+
+.p-vision__subtitle{
+  margin-top: rem(37);
+  font-weight: 500;
+  font-size: rem(24);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    margin-top: rem(30);
+  }
+  @include mq('pc'){
+    margin-top: rem(30);
+    font-weight: 700;
+    font-size: rem(24);
+  }
+}
+
+.p-vision__texts{
+  margin-top: rem(35);
+
+  @include mq('pc'){
+    margin-top: rem(30);
+  }
+}
+
+.p-vision__text{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 2;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('pc'){
+    font-size: rem(16);
+  }
+}
+.p-vision__text:not(:first-child){
+  margin-top: rem(20);
+}

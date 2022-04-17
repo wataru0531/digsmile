@@ -1,0 +1,16 @@
+/*******************************************************
+
+.c-image-show  画像アニメーション
+.c-layer-black、.c-layer-yellow(黄色レイヤー)と依存関係
+
+********************************************************/
+@use './global/' as *;
+
+.c-image-show img{
+  opacity: 0;
+}
+.c-image-show.is-inview img{
+  // opacity: 1;
+  @include animation($name: imageShow);
+}
+

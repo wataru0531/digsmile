@@ -1,0 +1,61 @@
+/*******************************************************
+
+.p-header
+
+********************************************************/
+@use './global/' as *;
+
+.p-header{
+  width: 100%;
+  height: rem(55);
+  background-color: rgba(0, 0, 0, .2);
+}
+
+.p-header__inner{
+  padding-right: rem(15);
+  padding-left: rem(15);
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ロゴ
+.p-header__logo{
+  height: inherit;
+  position: relative;
+  z-index: 500;
+}
+
+.p-header__logo a{
+  height: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-header__logo a > img{
+  width: rem(189);
+}
+
+// ハンバーガー
+.p-header__hamburger{
+  position: relative;
+  z-index: 500;
+}
+
+// ドロワー
+.p-header__drawer{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 400;
+}
+
+// 黒のレイヤー
+.p-header__overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 300;
+}

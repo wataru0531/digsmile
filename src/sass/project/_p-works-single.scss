@@ -1,0 +1,152 @@
+/*******************************************************
+
+.p-works-single
+
+********************************************************/
+@use './global/' as *;
+
+.p-works-single{
+
+}
+
+
+.p-works-single__inner{
+  @include mq('tab'){
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.p-works-single__sticky{
+  @include mq('tab'){
+    width: 20%;
+  }
+}
+
+// stickyを適用するにはスティッキーアイテムの外側にスティッキーコンテナがいる
+.p-works-single-sticky__container{
+  @include mq('tab'){
+    position: sticky;
+    top: rem(100);
+  }
+}
+
+.p-works-single-sticky__title{
+  font-family: $font-family-sub;
+  font-weight: 700;
+  font-size: rem(30);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  text-transform: uppercase;
+}
+
+.p-works-single__header{
+  border-left: rem(5) solid $text;
+}
+
+.p-works-single__titles{
+  padding-left: rem(20);
+}
+
+// タイトル
+.p-works-single__title{
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+// 制作実績サブタイトル
+.p-works-single__subtitle{
+  margin-top: rem(5);
+  font-family: $font-family-sub;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-works-single__block{
+  @include mq('tab'){
+    width: 75%;
+  }
+}
+
+.p-works-single__header{
+  margin-top: rem(30);
+
+  @include mq('tab'){
+    margin-top: 0;
+  }
+}
+
+
+.p-works-single__info{
+  text-align: right;
+}
+
+// カテゴリー
+.p-works-single__category{
+  margin-right: rem(20);
+  padding-left: rem(15);
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  position: relative;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+.p-works-single__category::before{
+  content: '';
+  display: block;
+  width: rem(10);
+  height: rem(1);
+  background-color: $gold;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+// タイム
+.p-works-single__time{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-works-single__contents{
+  margin-top: rem(32);
+}
+
+.p-works-single__comment{
+  margin-top: rem(70);
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    margin-top: rem(120);
+  }
+}
+
+.p-works-single__introduction-list{
+  margin-top: rem(32);
+}
+

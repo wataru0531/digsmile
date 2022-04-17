@@ -1,0 +1,57 @@
+/*******************************************************
+
+.p-introduction-list
+
+********************************************************/
+@use './global/' as *;
+
+.p-introduction-list{
+  
+}
+
+.p-introduction-list__block{
+  padding-top: rem(15);
+  padding-bottom: rem(15);
+  padding-right: rem(5);
+  padding-left: rem(5);
+  border-top: rem(1) solid $lineGray;
+  display: flex;
+
+  @include mq('tab'){
+    padding-top: rem(25);
+    padding-bottom: rem(25);
+    padding-right: rem(10);
+    padding-left: rem(10);
+  }
+}
+.p-introduction-list__block:last-child{
+  border-bottom: rem(1) solid $lineGray;
+}
+
+.p-introduction-list__title{
+  margin-right: rem(10);
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+  width: rem(100);
+  // max-width: rem(100);
+
+  @include mq('tab'){
+    font-size: rem(18);
+  }
+}
+
+.p-introduction-list__detail{
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+  flex: 1;
+
+  @include mq('tab'){
+    font-size: rem(18);
+  }
+}

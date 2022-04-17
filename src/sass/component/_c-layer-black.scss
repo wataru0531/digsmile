@@ -1,0 +1,20 @@
+/*******************************************************
+
+.c-layer-black  黒レイヤースライド
+
+********************************************************/
+@use './global/' as *;
+
+.c-layer-black{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.c-image-show.is-inview .c-layer-black{
+  opacity: 1;
+  @include animation($name: layerSlide);
+}

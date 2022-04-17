@@ -1,0 +1,51 @@
+/*******************************************************
+
+.p-culture
+
+********************************************************/
+@use './global/' as *;
+
+.p-culture{
+
+  @include mq('tab'){
+    width: 100%;
+    max-width: rem(520);
+  }
+}
+
+.p-culture__img{
+  margin-top: rem(30);
+  position: relative;
+  overflow: hidden;
+}
+
+.p-culture__img::before{
+  content: '';
+  display: block;
+  padding-top: 67.246376811%;
+}
+
+
+// 画像
+.p-culture__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p-culture__description{
+  margin-top: rem(30);
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-culture__btn{
+  margin-top: rem(30);
+}

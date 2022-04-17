@@ -1,0 +1,31 @@
+/*******************************************************
+
+.c-btn-submit
+
+********************************************************/
+@use './global/' as *;
+
+.c-btn-submit{
+  display: inline-block;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  width: 100%;
+  max-width: rem(160);
+  font-weight: 700;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: 0.015em;
+  color: $white;
+  background-color: $black;
+  border: rem(1) solid $black;
+  transition: all .3s;
+}
+
+.c-btn-submit:hover{
+  @include mq('tab'){
+    color: $black;
+    background-color: $white;
+  }
+}

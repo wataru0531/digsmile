@@ -1,0 +1,43 @@
+/*******************************************************
+
+.p-contact-sub
+
+********************************************************/
+@use './global/' as *;
+
+.p-contact-sub__inner{
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: rem(15);
+  padding-left: rem(15);
+  width: 100%;
+  max-width: rem(760);
+
+  @include mq('tab'){
+    padding-right: rem(30);
+    padding-left: rem(30);
+  }
+}
+
+.p-contact-sub__description{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.71428571428;
+  letter-spacing: 0.004em;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-contact-sub__form{
+  margin-top: rem(53);
+
+  @include mq('tab'){
+    margin-top: rem(23);
+  }
+  @include mq('pc'){
+    margin-top: rem(55);
+  }
+}

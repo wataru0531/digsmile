@@ -1,0 +1,26 @@
+/*******************************************************
+
+.p-taxonomy-list
+
+********************************************************/
+@use './global/' as *;
+
+.p-taxonomy-list{
+
+}
+
+.p-taxonomy-list__items{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-taxonomy-list__item{
+  margin-right: rem(5);
+  margin-bottom: rem(5);
+}
+
+// 現在のページならis-current付与
+.p-taxonomy-list__item.is-current{
+  color: $white;
+  background-color: $gold;
+}

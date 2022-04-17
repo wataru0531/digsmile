@@ -1,0 +1,20 @@
+/*******************************************************
+
+.c-section-title
+
+********************************************************/
+@use './global/' as *;
+
+.c-section-title{
+  font-family: $font-family-sub;
+  font-weight: 800;
+  font-size: rem(28);
+  line-height: 1;
+  letter-spacing: 0.068em;
+  color: $text;
+  text-transform: uppercase;
+
+  @include mq('tab'){
+    font-size: rem(32);
+  }
+}

@@ -1,0 +1,32 @@
+/*******************************************************
+
+.p-blog
+
+********************************************************/
+@use './global/' as *;
+
+.p-blog__description{
+  margin-top: rem(20);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 2;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    margin-top: rem(30);
+    font-size: rem(16);
+  }
+}
+
+.p-blog__items{
+  margin-top: rem(30);
+}
+
+.p-blog__btn{
+  margin-top: rem(30);
+
+  @include mq('tab'){
+    text-align: center;
+  }
+}

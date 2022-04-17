@@ -1,0 +1,47 @@
+/*******************************************************
+
+.p-pagination
+
+********************************************************/
+@use './global/' as *;
+
+.p-pagination__inner{
+
+}
+
+.p-pagination__block{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.p-pagination .page-numbers{
+  margin-right: rem(10);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(50);
+  height: rem(50);
+  border-radius: 50%;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  background-color: $bgGray;
+  transition: all .3s;
+}
+
+// ホバー
+.p-pagination .page-numbers:hover{
+  @include mq('tab'){
+    color: $white;
+    background-color: $gold;
+  }
+}
+
+// 現在のページ
+.p-pagination .page-numbers.current{
+  color: $white;
+  background-color: $gold;
+}

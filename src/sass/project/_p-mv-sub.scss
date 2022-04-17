@@ -1,0 +1,96 @@
+/*******************************************************
+
+.p-mv-sub
+
+********************************************************/
+@use './global/' as *;
+
+.p-mv-sub{
+  height: 100vh;
+}
+
+// 黒のバックグラウンド
+.p-mv-sub__background{
+  width: 52.8%;
+  height: 100%;
+  background-color: $bgMainVisual;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+
+  @include mq('tab'){
+    width: 52.864583%;
+  }
+  @include mq('pc'){
+    width: 54.166666%;
+  }
+}
+.p-mv-sub__background.is-inview{
+  opacity: 1;
+  @include animation($name: layerSlide);
+}
+
+// 画像
+.p-mv-sub__img{
+  width: 76.533333%;
+  height: 86.191536748%;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include mq('tab'){
+    width: 76.432291%;
+  }
+  @include mq('pc'){
+    width: 76.388888%;
+  }
+}
+
+.p-mv-sub__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// タイトル
+.p-mv-sub__titles{
+  position: absolute;
+  top: 50%;
+  right: 7.773333vw;
+  transform: translateY(-50%);
+  z-index: 200;
+  
+  @include mq('tab'){
+    right: 12.760416vw;
+  }
+  @include mq('pc'){
+    right: 11.805555vw;
+  }
+}
+
+.p-mv-sub__title{
+  font-family: $font-family-sub;
+  font-weight: 800;
+  font-size: rem(52);
+  line-height: 1.65384615384;
+  letter-spacing: normal;
+  color: $white;
+  text-transform: uppercase;
+
+  @include mq('pc'){
+    font-size: rem(72);
+  }
+}
+
+.p-mv-sub__subtitle{
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $white;
+
+  @include mq('pc'){
+    font-size: rem(20);
+  }
+}

@@ -1,0 +1,17 @@
+/*******************************************************
+
+.p-topics-archive 
+
+********************************************************/
+@use './global/' as *;
+
+
+.p-archive-topics__item:not(:first-child){
+  margin-top: rem(20);
+
+  @include mq('tab'){
+    margin-top: rem(30);
+  }
+}
+
+

@@ -1,0 +1,22 @@
+/*******************************************************
+
+.p-sidebar-blog
+
+********************************************************/
+@use './global/' as *;
+
+
+.p-sidebar-blog__inner{
+  @include mq('tab'){
+    position: sticky;
+    top: rem(75);
+  }
+}
+
+.p-sidebar-blog__archive{
+  margin-top: rem(32);
+}
+
+.p-sidebar-blog__category{
+  margin-top: rem(32);
+}

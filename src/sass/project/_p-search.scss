@@ -1,0 +1,48 @@
+/*******************************************************
+
+.p-search
+
+********************************************************/
+@use './global/' as *;
+
+.p-search__header{
+  padding-left: rem(20);
+  border-left: rem(5) solid $text;
+}
+
+.p-search__title{
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-search__posts{
+  margin-top: rem(10);
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-search__items{
+  margin-top: rem(32);
+}
+
+.p-search__not-keyword{
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-search__not-found{
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}

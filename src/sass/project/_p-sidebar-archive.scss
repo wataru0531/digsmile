@@ -1,0 +1,25 @@
+/*******************************************************
+
+.p-sidebar-archive  ブログ一覧ページのarchiveリスト
+
+********************************************************/
+@use './global/' as *;
+
+
+.p-sidebar-archive__items{
+  margin-top: rem(20);
+}
+
+.p-sidebar-archive__item a{
+  display: block;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  padding-right: rem(10);
+  padding-left: rem(10);
+  font-weight: 500;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+  border-bottom: rem(1) solid $lineGray;
+}

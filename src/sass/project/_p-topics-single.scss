@@ -1,0 +1,117 @@
+/*******************************************************
+
+.p-topics-single
+
+********************************************************/
+@use './global/' as *;
+
+.p-topics-single{
+
+}
+
+
+.p-topics-single__inner{
+  @include mq('tab'){
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.p-topics-single__sticky{
+  @include mq('tab'){
+    width: 20%;
+  }
+}
+
+// stickyを適用するにはスティッキーアイテムの外側にスティッキーコンテナがいる
+.p-topics-single-sticky__container{
+  @include mq('tab'){
+    position: sticky;
+    top: rem(100);
+  }
+}
+
+.p-topics-single-sticky__title{
+  font-family: $font-family-sub;
+  font-weight: 700;
+  font-size: rem(30);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  text-transform: uppercase;
+}
+
+.p-topics-single__block{
+  @include mq('tab'){
+    width: 75%;
+  }
+}
+
+.p-topics-single__header{
+  margin-top: rem(30);
+  border-left: rem(5) solid $text;
+
+  @include mq('tab'){
+    margin-top: 0;
+  }
+}
+
+.p-topics-single__title{
+  padding-left: rem(20);
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-topics-single__info{
+  margin-top: rem(5);
+  text-align: right;
+}
+
+// カテゴリー
+.p-topics-single__category{
+  margin-right: rem(20);
+  padding-left: rem(15);
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  position: relative;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+.p-topics-single__category::before{
+  content: '';
+  display: block;
+  width: rem(10);
+  height: rem(1);
+  background-color: $gold;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+// タイム
+.p-topics-single__time{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+.p-topics-single__contents{
+  margin-top: rem(32);
+}
+

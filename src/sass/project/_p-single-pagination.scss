@@ -1,0 +1,41 @@
+/*******************************************************
+
+.p-single-pagination
+
+********************************************************/
+@use './global/' as *;
+
+.p-single-pagination__inner{
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  max-width: rem(300);
+  display:flex;
+  justify-content: space-between;
+
+  @include mq('tab'){
+    max-width: rem(600);
+  }
+}
+
+// prev
+.p-single-pagination__previous a{
+  display: block;
+  font-family: $font-family-sub;
+  font-weight: 700;
+  font-size: rem(25);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+}
+
+// next
+.p-single-pagination__next a{
+  display: block;
+  font-family: $font-family-sub;
+  font-weight: 700;
+  font-size: rem(25);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+}

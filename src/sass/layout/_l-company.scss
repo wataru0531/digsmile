@@ -1,0 +1,18 @@
+/*******************************************************
+
+.l-company
+
+********************************************************/
+@use './global/' as *;
+
+.l-company{
+  margin-top: rem(80);
+  padding-bottom: rem(80);
+
+  @include mq('tab'){
+    margin-top: rem(82);
+  }
+  @include mq('tab'){
+    margin-bottom: rem(120);
+  }
+}

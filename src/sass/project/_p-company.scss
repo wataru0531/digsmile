@@ -1,0 +1,80 @@
+/*******************************************************
+
+.p-company
+
+********************************************************/
+@use './global/' as *;
+
+.p-company__box{
+  margin-top: rem(30);
+  border-top: rem(1) solid $lineGray;
+}
+
+.p-company-list__block{
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  // border-top: rem(1) solid $lineGray;
+  border-bottom: rem(1) solid $lineGray;
+  display: flex;
+}
+
+.p-company-list{
+  margin-left: auto;
+  width: 100%;
+  max-width: rem(678);
+}
+
+.p-company-list__title{
+  margin-right: rem(93);
+  width: 25%;
+  width: rem(75);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+  color: $text;
+}
+
+.p-company-list__content{
+  flex: 1;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.5;
+  letter-spacing: 0.004em;
+}
+
+// Googleマップ
+.p-company__google-map{
+  margin-top: rem(40);
+}
+
+.p-google-map__iframe{
+  overflow: hidden;
+  position: relative;
+}
+
+.p-google-map__iframe::before{
+  content: '';
+  display: block;
+  padding-top: 136.231884057%;
+
+  @include mq('tab'){
+    padding-top: 32.485875706%;
+  }
+  @include mq('pc'){
+    padding-top: 32.727272%;
+  }
+}
+
+.p-google-map__iframe iframe{
+  width: 100%;
+  height: 150%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @include mq('tab'){
+    height: 210%;
+  }
+}

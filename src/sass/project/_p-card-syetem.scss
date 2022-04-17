@@ -1,0 +1,54 @@
+/*******************************************************
+
+.p-card-system  cultureページ、systemセクションのカードで使用
+
+********************************************************/
+@use './global/' as *;
+
+.p-card-system{
+  padding-top: rem(40);
+  padding-bottom: rem(40);
+  padding-right: rem(30);
+  padding-left: rem(30);
+  background-color: $white;
+}
+
+.p-card-system__img img{
+  margin-right: auto;
+  margin-left: auto;
+  width: rem(100);
+}
+
+.p-card-system__subtitle{
+  margin-top: rem(10);
+  font-family: $font-family-sub;
+  font-weight: 500;
+  font-size: rem(16);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+  text-align: center;
+}
+
+.p-card-system__body{
+  padding-top: rem(20);
+}
+
+.p-card-system__title{
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+
+}
+
+.p-card-system__description{
+  margin-top: rem(10);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 2;
+  letter-spacing: normal;
+  color: $text;
+
+}

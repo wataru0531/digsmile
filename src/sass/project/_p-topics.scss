@@ -1,0 +1,31 @@
+/*******************************************************
+
+.p-topics
+
+********************************************************/
+@use './global/' as *;
+
+.p-topics__items{
+  margin-top: rem(22);
+
+  @include mq('tab'){
+    margin-top: rem(20);
+  }
+  @include mq('pc'){
+    margin-left: auto;
+    width: 100%;
+    max-width: rem(700);
+  }
+}
+
+.p-topics__btn{
+  margin-top: rem(20);
+
+  @include mq('tab'){
+    margin-top: rem(30);
+  }
+  @include mq('pc'){
+    text-align: right;
+
+  }
+}

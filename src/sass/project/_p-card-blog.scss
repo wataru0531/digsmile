@@ -1,0 +1,174 @@
+/*******************************************************
+
+.p-card-blog  ブログ一覧ページのカード
+
+********************************************************/
+@use './global/' as *;
+
+.p-card-blog{
+  display: block;
+  padding-top: rem(30);
+  padding-bottom: rem(30);
+  border-top: rem(1) solid $lineGray;
+  position: relative;
+
+  @include mq('tab'){
+    padding-top: rem(50);
+    padding-bottom: rem(50);
+    display: flex;
+  }
+}
+.p-card-blog:last-child{
+  border-bottom: rem(1) solid $lineGray;
+}
+
+// 背景色アニメーション
+.p-card-blog::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: $bgGray;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  transform: scale(0, 1);
+  transform-origin: right;
+  transition: transform .3s;
+}
+.p-card-blog:hover::before{
+  @include mq('tab'){
+    transform: scale(1, 1);
+    transform-origin: left;
+  }
+}
+
+.p-card-blog__img{
+  overflow: hidden;
+  position: relative;
+
+  @include mq('tab'){
+    margin-right: rem(30);
+    width: 45%;
+  }
+}
+
+.p-card-blog__img::before{
+  content: '';
+  display: block;
+  padding-top: 50%;
+
+  @include mq('tab'){
+    padding-top: 67.246376811%;
+  }
+}
+
+// 画像
+.p-card-blog__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p-card-blog__body{
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+
+  @include mq('tab'){
+    flex: 1;
+  }
+}
+
+// カテゴリー
+.p-card-blog__category{
+  margin-right: rem(20);
+  padding-left: rem(15);
+  display: inline-block;
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  position: relative;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+.p-card-blog__category::before{
+  content: '';
+  display: block;
+  width: rem(10);
+  height: rem(1);
+  background-color: $gold;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.p-card-blog__time{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// タイトル
+.p-card-blog__title{
+  margin-top: rem(8);
+  font-weight: 700;
+  font-size: rem(18);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(20);
+  }
+}
+// .p-card-blog__title span{
+//   padding-bottom: rem(3);
+//   font-weight: 700;
+//   font-size: rem(18);
+//   line-height: 1.5;
+//   letter-spacing: normal;
+//   color: $text;
+//   // 位置(background-position) / サイズ(background-size).../(スラッシュ)で区切る
+//   // ここでは、0 100%、0を区切る。色、位置(左上からx,y) / サイズ(幅,高さ)、リピート
+//   // 左下に寄った状態から、ホバー時にはサイズが右に100%となる
+//   // background: linear-gradient($gold, $gold) 0 100% / 0 rem(1) no-repeat;
+//   // transition: background .4s;
+
+//   @include mq('tab'){
+//     font-size: rem(20);
+//   }
+// }
+// .p-card-blog:hover .p-card-blog__title span{
+//   @include mq('tab'){
+//     background-size: 100% rem(1); // 線の横幅、縦幅
+//   }
+// }
+
+.p-card-blog__content{
+  margin-top: rem(8);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $textGray;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

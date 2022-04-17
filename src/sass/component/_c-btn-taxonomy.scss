@@ -1,0 +1,30 @@
+/*******************************************************
+
+.c-btn-taxonomy  制作実績一覧ページでのカテゴリー
+
+********************************************************/
+@use './global/' as *;
+
+.c-btn-taxonomy{
+  display: block;
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  padding-right: rem(20);
+  padding-left: rem(20);
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1;
+  letter-spacing: normal;
+  color: $text;
+  background-color: $bgGray;
+  border-radius: rem(5);
+  transition: all .3s;
+}
+
+// ホバー時
+.c-btn-taxonomy:hover{
+  @include mq('tab'){
+    color: $white;
+    background-color: $gold;
+  }
+}

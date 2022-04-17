@@ -1,0 +1,24 @@
+/*******************************************************
+
+.p-system
+
+********************************************************/
+@use './global/' as *;
+
+.p-system{
+  background-color: $bgSection;
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+}
+
+.p-system__items{
+  margin-top: rem(30);
+}
+
+.p-system__item:not(:first-child){
+  margin-top: rem(25);
+  
+  @include mq('tab'){
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,33 @@
+/*******************************************************
+
+.mwwp mwwpフォームの上書き
+
+********************************************************/
+@use './global/' as *;
+
+// エラーメッセージ
+.p-form .error{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $red;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}
+
+// 送信完了メッセージ
+.p-form .mw_wp_form.mw_wp_form_complete{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+  text-align: center;
+
+  @include mq('tab'){
+    font-size: rem(16);
+  }
+}

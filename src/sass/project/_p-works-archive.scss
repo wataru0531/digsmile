@@ -1,0 +1,14 @@
+/*******************************************************
+
+.p-works-archive
+
+********************************************************/
+// @use './global/' as *;
+
+.p-works-archive__item:not(:first-child){
+  // margin-top: rem(25);
+
+  // @include mq('tab'){
+  //   margin-top: 0;
+  // }
+}

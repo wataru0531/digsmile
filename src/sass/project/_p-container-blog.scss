@@ -1,0 +1,19 @@
+/*******************************************************
+
+.p-container-blog
+
+********************************************************/
+@use './global/' as *;
+
+.p-container-blog__inner{
+  @include mq('tab'){
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.p-container-blog__block{
+  @include mq('tab'){
+    width: 65%;
+  }
+}

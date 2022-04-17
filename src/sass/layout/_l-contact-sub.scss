@@ -1,0 +1,20 @@
+/*******************************************************
+
+.l-contact-sub
+
+********************************************************/
+@use './global/' as *;
+
+.l-contact-sub{
+  margin-top: rem(80);
+  padding-bottom: rem(80);
+
+  @include mq('tab'){
+    margin-top: rem(135);
+    padding-bottom: rem(197);
+  }
+  @include mq('pc'){
+    margin-top: rem(120);
+    padding-bottom: rem(120);
+  }
+}

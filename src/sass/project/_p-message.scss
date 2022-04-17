@@ -1,0 +1,103 @@
+/*******************************************************
+
+.p-message
+
+********************************************************/
+@use './global/' as *;
+
+.p-message__box{
+  padding-right: rem(20);
+
+  @include mq('tab'){
+    padding-right: 0;
+  }
+}
+
+.p-message__img{
+  margin-left: calc(50% - 50vw);
+  overflow: hidden;
+  position: relative;
+
+  @include mq('tab'){
+    margin-left: 0;
+    width: 44.568245125%;
+  }
+  @include mq('pc'){
+    width: 38.181818%;
+  }
+}
+
+.p-message__img::before{
+  content: '';
+  display: block;
+  padding-top: 67.647058823%;
+
+  @include mq('tab'){
+    padding-top: 67.5%;
+  }
+  @include mq('pc'){
+    padding-top: 67.25%;
+  }
+}
+
+// 画像
+.p-message__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.p-message__contents{
+  margin-top: rem(-101);
+  padding-top: rem(126);
+  padding-bottom: rem(80);
+  padding-right: rem(28);
+  padding-left: rem(28);
+  background-color: $bgSection;
+
+  @include mq('tab'){
+    margin-top: rem(-85);
+    margin-left: auto;
+    padding-top: rem(109);
+    padding-bottom: rem(78);
+    padding-right: rem(40);
+    padding-left: rem(40);
+    // width: 100%;
+    // max-width: rem(494);
+    width: 68.8802228412%;
+  }
+  @include mq('pc'){
+    margin-top: rem(-138);
+    padding-top: rem(120);
+    padding-bottom: rem(90);
+    padding-right: rem(185);
+    padding-left: rem(185);
+    width: 70%;
+  }
+}
+
+.p-message__texts{
+  margin-top: rem(30);
+}
+
+.p-mesage__text{
+  font-weight: 500;
+  font-size: rem(14);
+  line-height: 2;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('pc'){
+    font-size: rem(16);
+  }
+}
+
+.p-mesage__text:not(:first-child){
+  margin-top: rem(20);
+}
+
