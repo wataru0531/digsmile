@@ -9,7 +9,7 @@ $blog = esc_url(home_url('blog'));
 $contact = esc_url(home_url('contact'));
 ?>
 <?php 
-var_dump($wp_query);
+// var_dump($wp_query);
 ?>
 
 <?php get_header(); ?>
@@ -19,8 +19,6 @@ var_dump($wp_query);
 				<div class="p-mv-sub__background js-inview"></div>
 				<figure class="p-mv-sub__img c-image-show js-inview">
 					<picture>
-						<!-- <source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/top_mv_pc.jpg">
-						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/top_mv_sp.jpg" alt=""> -->
 						<source media="(min-width: 768px)" srcset="<?php echo get_template_directory_uri(); ?>/assets/images/about_mv_pc.jpg">
 						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/about_mv_sp.jpg" alt="">
 					</picture>
@@ -34,20 +32,8 @@ var_dump($wp_query);
 			</div><!-- l-mv-sub -->
 
 			<!-- l-breadcrumb -->
-			<div class="l-breadcrumb p-breadcrumb">
-				<div class="p-breadcrumb__inner l-inner">
-					<span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="home">
-							<span property="name">トップ</span>
-						</a>
-						<meta property="position" content="1">
-					</span>&nbsp;&gt;&nbsp; <span property="itemListElement" typeof="ListItem">
-						<span property="name" class="post post-page current-item">ABOUT</span>
-						<meta property="url" content="">
-						<meta property="position" content="2">
-					</span>
-				</div>
-			</div><!-- l-breadcrumb -->
+				<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+			<!-- l-breadcrumb -->
 
 			<!-- l-min-height -->
 			<main class="l-min-height">
@@ -85,12 +71,12 @@ var_dump($wp_query);
 								<h2 class="c-section-title">ceo&nbsp;message</h2>
 							</div>
 							<div class="p-message__texts">
-								<p class="p-mesage__text">良いデザインは人を幸せにする。</p>
-								<p class="p-mesage__text">私達はそう信じています。</p>
-								<p class="p-mesage__text">デザインを通して、ビジネスの課題とユーザーの課題を解決することで、世の中を幸せにしていきたい。</p>
-								<p class="p-mesage__text">現在はあらゆるプロダクトがデジタル化されており、デザイナーに対する需要はますます高まっています。それとともに、期待される役割も幅広くなりつつあります。</p>
-								<p class="p-mesage__text">クリエイティブで社会の可能性を切り開いていく。</p>
-								<p class="p-mesage__text">変化の激しい現代、私達はデザインの力で社会を良い方向に変革していく企業を目指していきます。</p>
+								<p class="p-message__text">良いデザインは人を幸せにする。</p>
+								<p class="p-message__text">私達はそう信じています。</p>
+								<p class="p-message__text">デザインを通して、ビジネスの課題とユーザーの課題を解決することで、世の中を幸せにしていきたい。</p>
+								<p class="p-message__text">現在はあらゆるプロダクトがデジタル化されており、デザイナーに対する需要はますます高まっています。それとともに、期待される役割も幅広くなりつつあります。</p>
+								<p class="p-message__text">クリエイティブで社会の可能性を切り開いていく。</p>
+								<p class="p-message__text">変化の激しい現代、私達はデザインの力で社会を良い方向に変革していく企業を目指していきます。</p>
 							</div>
 						</div>
 					</div>
@@ -120,7 +106,10 @@ var_dump($wp_query);
 						</div>
 						<div class="p-company__google-map">
 							<div class="p-google-map__iframe">
-								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103758.47625834653!2d139.67186105964078!3d35.641224427528414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ccfbfa839cd%3A0x47f236c6a84df9e2!2z77yq77yy5p2x5Lqs57eP5ZCI55eF6Zmi!5e0!3m2!1sja!2sjp!4v1646577858313!5m2!1sja!2sjp" style="border:0;" allowfullscreen="" loading="lazy">
+								<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103758.47625834653!2d139.67186105964078!3d35.641224427528414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ccfbfa839cd%3A0x47f236c6a84df9e2!2z77yq77yy5p2x5Lqs57eP5ZCI55eF6Zmi!5e0!3m2!1sja!2sjp!4v1646577858313!5m2!1sja!2sjp"
+									style="border:0;"
+									allowfullscreen=""
+									loading="lazy">
 								</iframe>
 							</div>
 						</div>

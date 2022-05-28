@@ -1,0 +1,21 @@
+/*******************************************************
+
+.c-btn-page-top
+
+********************************************************/
+@use './global/' as *;
+
+.c-btn-arrow{
+  width: rem(20);
+  height: rem(20);
+  border-top: rem(3) solid $gold;
+  border-left: rem(3) solid $gold;
+  transform: translateY(rem(5)) rotate(45deg);
+}
+
+.p-page-top:hover .c-btn-arrow{
+  @include mq('tab'){
+    border-top: rem(3) solid $white;
+    border-left: rem(3) solid $white;
+  }
+}

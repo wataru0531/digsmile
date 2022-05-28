@@ -1,0 +1,107 @@
+/*******************************************************
+
+.p-works-single-swiper-main 制作実績詳細ページ　swiperのカスタマイズ
+
+********************************************************/
+@use './global/' as *;
+
+.p-works-single-swiper-main__block{
+  overflow: hidden;
+  position: relative;
+  border-radius: rem(5);
+}
+
+.p-works-single-swiper-main__block::before{
+  content: '';
+  display: block;
+  padding-top: 67.246376811%;
+}
+
+.p-works-single-swiper-main__block img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// キャプション
+.p-works-single-swiper-main__caption{
+  padding-top: rem(15);
+  padding-bottom: rem(20);
+  width: 100%;
+  font-weight: 500;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+
+  @include mq('tab'){
+    font-size: rem(22);
+  }
+}
+
+// prevボタン
+.p-works-single-swiper-main .swiper-button-prev:after{
+  display: none;
+}
+.p-works-single-swiper-main .swiper-button-prev{
+  width: rem(35);
+  height: rem(35);
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  transform: translateY(-50%);
+
+  @include mq('tab'){
+    width: rem(60);
+    height: rem(60);
+  }
+}
+.p-works-single-swiper-main .swiper-button-prev::before{
+  content: '';
+  display: block;
+  width: rem(13);
+  height: rem(13);
+  border-bottom: rem(3) solid $black;
+  border-left: rem(3) solid $black;
+  transform: translateX(rem(2)) rotate(45deg);
+
+  @include mq('tab'){
+    width: rem(20);
+    height: rem(20);
+  }
+}
+
+// nextボタン
+.p-works-single-swiper-main .swiper-button-next::after{
+  display: none;
+}
+
+.p-works-single-swiper-main .swiper-button-next{
+  width: rem(35);
+  height: rem(35);
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  transform: translateY(-50%);
+
+  @include mq('tab'){
+    width: rem(60);
+    height: rem(60);
+  }
+}
+.p-works-single-swiper-main .swiper-button-next::before{
+  content: '';
+  display: block;
+  width: rem(13);
+  height: rem(13);
+  border-bottom: rem(3) solid $black;
+  border-right: rem(3) solid $black;
+  transform: translateX(rem(-2)) rotate(-45deg);
+
+  @include mq('tab'){
+    width: rem(20);
+    height: rem(20);
+  }
+}

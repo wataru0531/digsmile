@@ -1,6 +1,6 @@
 /*******************************************************
 
-.p-lists-grid-04  2列 → ３列 → ４列
+.p-lists-grid-04  2列 → 4列 → ４列
 
 ********************************************************/
 @use './global/' as *;
@@ -11,7 +11,7 @@
   gap: rem(15);
 
   @include mq('tab'){
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: rem(25);
   }
   @include mq('pc'){

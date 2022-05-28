@@ -23,8 +23,16 @@ html {
   
 	//inner~max-screen
 	@media (min-width: $l-inner) {
-		font-size: 16px;
+		// font-size: vw(strip-unit($l-inner), 16); // 16 / 1100 * 100vw
+		// font-size: max(#{vw(900, 16)}, 12px);
+    font-size: 16px;
 	}
+
+  // @media (min-width: $l-pc){
+    // font-size: vw(strip-unit($l-inner), 16); // 16 / 1100 * 100vw
+		// font-size: max(#{vw(900, 16)}, 12px);
+    // font-size: 16px;
+  // }
 }
 
 /* Set core body defaults */
@@ -34,7 +42,7 @@ body {
 	font-weight: $font-weight-base;
   line-height: $lh;
 	color: $text;
-  // background-color:;
+  // background-color: $white;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	overflow-wrap: break-word;

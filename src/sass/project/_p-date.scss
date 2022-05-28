@@ -1,0 +1,23 @@
+/*******************************************************
+
+.p-blog-single  ブログ詳細ページ
+
+********************************************************/
+@use './global/' as *;
+
+.p-date__header{
+  padding-left: rem(20);
+  border-left: rem(5) solid $text;
+}
+
+.p-data__title{
+  font-weight: 700;
+  font-size: rem(20);
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: $text;
+}
+
+.p-date__items{
+  margin-top: rem(30);
+}

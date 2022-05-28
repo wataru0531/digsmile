@@ -28,13 +28,11 @@
   width: 100%;
   height: 100%;
   background-color: rgba(34, 34, 34, .95);
-  z-index: -100;
   position: absolute;
   top: 0;
   right: 0;
-
+  z-index: -100;
   transform: translateY(-100%);
-  
   transition: all .3s;
 }
 .p-drawer.is-slide::before{
@@ -53,6 +51,15 @@
   padding-top: rem(65);
   padding-bottom: rem(65);
   overflow: scroll;
+  
+  // IE, Edgeでスクロールバー非表示
+  -ms-overflow-style: none;
+  // Firefoxでスクロールバー非表示
+  scrollbar-width: none;
+}
+// WindowsのChrome、Safariでスクロールバー非表示
+.p-drawer__scroll::-webkit-scrollbar {
+  display: none;
 }
 
 // ロゴ

@@ -11,40 +11,71 @@ $contact = esc_url(home_url('contact'));
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# website: http://ogp.me/ns/website #">
+<head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   
   <!-- favicon.ico 16*16、32*32、48*48 -->
-<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
-<!-- タッチアイコン 180*180のpng -->
-<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/android-chrome-192x192.png">
-<!-- Android 192*192のpng-->
-<link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/android-chrome-192x192.png">
+  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" />
+  <!-- タッチアイコン 180*180のpng -->
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/android-chrome-192x192.png">
+  <!-- Android 192*192のpng-->
+  <link rel="icon" type="image/png" sizes="192x192" href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon/android-chrome-192x192.png">
 
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&display=swap" rel="stylesheet">
-  
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
 
 <!-- l-global-container -->
 <div class="l-global-container">
+
+  <!-- l-overlay -->
+  <div class="l-overlay p-overlay js-overlay"></div>
+  <!-- l-overlay -->
+      
+  <!-- l-drawer -->
+  <nav class="l-drawer p-drawer js-drawer">
+    <div class="p-drawer__inner">
+      <div class="p-drawer__scroll">
+        <div class="p-drawer__logo">
+          <a href="<?php echo $top; ?>">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-drawer.svg" alt="ロゴ画像">
+          </a>
+        </div>
+        <ul class="p-drawer__items">
+          <li class="p-drawer__item">
+            <a href="<?php echo $about; ?>">about&nbsp;us</a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="<?php echo $works; ?>">works</a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="<?php echo $culture; ?>">culture</a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="<?php echo $topics; ?>">topics</a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="<?php echo $blog; ?>">blog</a>
+          </li>
+          <li class="p-drawer__item">
+            <a href="<?php echo $contact; ?>">contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- l-drawer -->
 
   <!-- l-header -->
   <header class="l-header p-header js-header">
     <div class="p-header__inner">
       <?php if(is_front_page()): ?>
         <h1 class="p-header__logo">
-          <a href="<?php echo $top; ?>">
+          <span>
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="ロゴ画像">
-          </a>
+          </span>
         </h1>
       <?php else: ?>
         <div class="p-header__logo">
@@ -67,42 +98,10 @@ $contact = esc_url(home_url('contact'));
           </div>
         </div>
       </div>
-      <div class="p-header__overlay p-overlay js-overlay"></div>
-      <nav class="p-header__drawer p-drawer js-drawer">
-        <div class="p-drawer__inner">
-          <div class="p-drawer__scroll">
-            <div class="p-drawer__logo">
-              <a href="">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-drawer.svg" alt="ロゴ画像">
-              </a>
-            </div>
-            <ul class="p-drawer__items">
-              <li class="p-drawer__item">
-                <a href="<?php echo $about; ?>">about&nbsp;us</a>
-              </li>
-              <li class="p-drawer__item">
-                <a href="<?php echo $works; ?>">works</a>
-              </li>
-              <li class="p-drawer__item">
-                <a href="<?php echo $culture; ?>">culture</a>
-              </li>
-              <li class="p-drawer__item">
-                <a href="<?php echo $topics; ?>">topics</a>
-              </li>
-              <li class="p-drawer__item">
-                <a href="<?php echo $blog; ?>">blog</a>
-              </li>
-              <li class="p-drawer__item">
-                <a href="<?php echo $contact; ?>">contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
     </div>
   </header><!-- l-header -->
   
   <!-- l-page-top -->
   <div class="l-page-top p-page-top js-page-top">
-    <button class="c-btn-page-top"></button>
+    <button class="c-btn-arrow"></button>
   </div><!-- l-page-top -->

@@ -6,7 +6,7 @@
 @use './global/' as *;
 
 // エラーメッセージ
-.p-form .error{
+.p-form .mw_wp_form .error{
   font-weight: 500;
   font-size: rem(14);
   line-height: 1.5;

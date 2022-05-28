@@ -89,6 +89,11 @@ input[type="radio"] + span::after{
   background-color: $text;
 }
 
+// デフォルトのmargin-leftを消去
+.mw_wp_form .p-form__radio .mwform-radio-field.horizontal-item:not(:first-child){
+  margin-left: 0;
+}
+
 // 当サイトを知ったきっかけ checkbox
 // 個人情報の取り扱い .your-approval も同時に変更となる
 .p-form__checkbox{
@@ -125,6 +130,10 @@ input[type="checkbox"] + span::after{
   border-left: rem(2) solid $text;
 }
 
+// デフォルトのmargin-leftを消去
+.mw_wp_form .p-form__checkbox .mwform-checkbox-field.horizontal-item{
+  margin-left: 0;
+}
 
 // ご職業 セレクトボックス
 select{
@@ -182,15 +191,18 @@ textarea{
   font-weight: 700;
 }
 
+// 個人情報の取り扱いに同意
 .p-form__approval{
   margin-top: rem(40);
+  text-align: center;
+}
 
-  @include mq('tab'){
-    text-align: center;
-  }
+.p-form__approval .mwform-checkbox-field-text{
+  text-align-last: left;
 }
 
 .p-form__btn{
   margin-top: rem(40);
   text-align: center;
 }
+

@@ -10,7 +10,7 @@ $contact = esc_url(home_url('contact'));
 ?>
 
 <?php 
-var_dump($wp_query);
+// var_dump($wp_query);
 
 // $terms = get_terms('topics-cat');
 // var_dump($terms);
@@ -18,6 +18,9 @@ var_dump($wp_query);
 // $obj = get_queried_object();
 // var_dump($obj);
 
+// var_dump($wpdb);
+
+// wp_get_archives();
 ?>
 
 <?php get_header(); ?>
@@ -143,7 +146,7 @@ var_dump($wp_query);
 			<div class="p-blog__header">
 				<h2 class="c-section-title">blog</h2>
 			</div>
-			<p class="p-blog__description"> DIGSMILEのブログです。 </p>
+			<p class="p-blog__description"> DIGSMILEのブログです。</p>
 			<div class="p-blog__items">
 				<?php 
 					$args = [
@@ -166,7 +169,7 @@ var_dump($wp_query);
 								<?php if($image): ?>
 									<img src="<?php echo $image[0]; ?>" alt="<?php the_title_attribute(); ?>">
 								<?php else: ?>
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_default.jpg" alt="ブログ記事の画像">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/blog_default.jpg" alt="">
 								<?php endif; ?>
 								<span class="c-layer-black"></span>
 								<span class="c-layer-yellow"></span>
