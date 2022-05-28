@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "NODE_ENV=development gulp build && NODE_ENV=development gulp",
-    "build": "NODE_ENV=production gulp build --production"
+    "build": "NODE_ENV=production gulp build --production",
+    "webp": "gulp webp"
   },
   "license": "ISC",
   "devDependencies": {

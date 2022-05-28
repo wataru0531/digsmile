@@ -9,6 +9,7 @@
   margin-top: rem(30);
   padding-top: rem(190);
   position: relative;
+  z-index: 200;
 
   @include mq('tab'){
     padding-top: rem(250);

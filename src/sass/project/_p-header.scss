@@ -8,7 +8,9 @@
 .p-header{
   width: 100%;
   height: rem(55);
-  background-color: rgba(0, 0, 0, .2);
+  // background-color: rgba(0, 0, 0, .2);
+  background-color: transparent;
+  mix-blend-mode: difference;
 }
 
 .p-header__inner{
@@ -27,6 +29,7 @@
   z-index: 500;
 }
 
+.p-header__logo span,
 .p-header__logo a{
   height: inherit;
   display: flex;
@@ -34,7 +37,7 @@
   align-items: center;
 }
 
-.p-header__logo a > img{
+.p-header__logo img{
   width: rem(189);
 }
 
@@ -42,20 +45,4 @@
 .p-header__hamburger{
   position: relative;
   z-index: 500;
-}
-
-// ドロワー
-.p-header__drawer{
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 400;
-}
-
-// 黒のレイヤー
-.p-header__overlay{
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 300;
 }

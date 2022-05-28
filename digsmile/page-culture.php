@@ -28,19 +28,9 @@ $contact = esc_url(home_url('contact'));
 				</div>
 			</div><!-- l-mv-sub -->
 
-			<div class="l-breadcrumb p-breadcrumb">
-				<div class="p-breadcrumb__inner l-inner">
-					<span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="">
-							<span property="name">トップ</span>
-						</a>
-					</span>&nbsp;&gt;&nbsp; <span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="current-item">
-							<span property="name">CULTURE</span>
-						</a>
-					</span>
-				</div>
-			</div>
+			<!-- l-breadcrumb -->
+			<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+			<!-- l-breadcrumb -->
 
 			<!-- l-min-height -->
 			<main class="l-min-height">
@@ -72,164 +62,60 @@ $contact = esc_url(home_url('contact'));
 							<h2 class="c-section-title">system</h2>
 						</div>
 						<ul class="p-system__items p-lists-grid-03">
-							<li class="p-system__item p-card-system">
-								<div class="p-card-system__block">
-									<figure class="p-card-system__img">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_system_environment.png" alt="">
-									</figure>
-									<div class="p-card-system__subtitle">environment</div>
-								</div>
-								<div class="p-card-system__body">
-									<h3 class="p-card-system__title">社内環境</h3>
-									<div class="p-card-system__description"> テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。 </div>
-								</div>
-							</li>
-							<li class="p-system__item p-card-system">
-								<div class="p-card-system__block">
-									<figure class="p-card-system__img">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_system_environment.png" alt="">
-									</figure>
-									<div class="p-card-system__subtitle">skill&nbsp;up</div>
-								</div>
-								<div class="p-card-system__body">
-									<h3 class="p-card-system__title">スキルアップ支援</h3>
-									<div class="p-card-system__description"> テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。 </div>
-								</div>
-							</li>
-							<li class="p-system__item p-card-system">
-								<div class="p-card-system__block">
-									<figure class="p-card-system__img">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_system_childcare.png" alt="">
-									</figure>
-									<div class="p-card-system__subtitle">childcare&nbsp;leave</div>
-								</div>
-								<div class="p-card-system__body">
-									<h3 class="p-card-system__title">育児休暇</h3>
-									<div class="p-card-system__description"> テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。 </div>
-								</div>
-							</li>
-							<li class="p-system__item p-card-system">
-								<div class="p-card-system__block">
-									<figure class="p-card-system__img">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_system_health.png" alt="">
-									</figure>
-									<div class="p-card-system__subtitle">health&nbsp;care</div>
-								</div>
-								<div class="p-card-system__body">
-									<h3 class="p-card-system__title">健康管理</h3>
-									<div class="p-card-system__description"> テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。 </div>
-								</div>
-							</li>
-							<li class="p-system__item p-card-system">
-								<div class="p-card-system__block">
-									<figure class="p-card-system__img">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_system_club.png" alt="">
-									</figure>
-									<div class="p-card-system__subtitle">club</div>
-								</div>
-								<div class="p-card-system__body">
-									<h3 class="p-card-system__title">クラブ活動</h3>
-									<div class="p-card-system__description"> テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。 </div>
-								</div>
-							</li>
-							<li class="p-system__item p-card-system">
-								<div class="p-card-system__block">
-									<figure class="p-card-system__img">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_system_dining.png" alt="">
-									</figure>
-									<div class="p-card-system__subtitle">cafeteria</div>
-								</div>
-								<div class="p-card-system__body">
-									<h3 class="p-card-system__title">社内食堂</h3>
-									<div class="p-card-system__description"> テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。 </div>
-								</div>
-							</li>
+
+							<!-- SCF 繰り返しフィールド -->
+							<?php $system_items = SCF::get('system_items'); ?>
+							<!-- <?php var_dump($system_items); ?> -->
+							<?php foreach($system_items as $system_item): ?>
+								<li class="p-system__item p-card-system">
+									<div class="p-card-system__block">
+										<figure class="p-card-system__img">
+											<img src="<?php echo wp_get_attachment_url($system_item['system_image']); ?>" alt="<?php echo $system_item['system_title']; ?>">
+										</figure>
+										<div class="p-card-system__subtitle"><?php echo $system_item['system_subtitle']; ?></div>
+									</div>
+									<div class="p-card-system__body">
+										<h3 class="p-card-system__title"><?php echo $system_item['system_title']; ?></h3>
+										<div class="p-card-system__description"><?php echo nl2br($system_item['system_description']); ?></div>
+									</div>
+								</li>
+							<?php endforeach; ?>
+							<!-- SCF 繰り返しフィールド -->
+
 						</ul>
 					</div>
 				</section><!-- l-system -->
 
-				<!-- l-voice -->
-				<section class="l-voice p-voice">
-					<div class="p-voice__inner l-inner">
-						<div class="p-voice__header">
-							<h2 class="c-section-title">voice</h2>
+				<!-- l-employee -->
+				<section class="l-employee p-employee">
+					<div class="p-employee__inner l-inner">
+						<div class="p-employee__header">
+							<h2 class="c-section-title">employee</h2>
 						</div>
-						<ul class="p-voice__items p-lists-grid-03-noGap">
-							<li class="p-voice__item p-card-voice">
-								<figure class="p-card-voice__img c-image-show js-inview">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_voice_01.jpg" alt="">
-									<span class="c-layer-yellow"></span>
-								</figure>
-								<div class="p-card-voice__block">
-									<span class="p-card-voice__position">マネージャー</span>
-									<div class="p-card-voice__date">2015年12月入社</div>
-									<h3 class="p-card-voice__name">山田 一郎</h3>
-									<div class="p-card-voice__kana">yamada ichiro</div>
-								</div>
-							</li>
-							<li class="p-voice__item p-card-voice">
-								<figure class="p-card-voice__img c-image-show js-inview">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_voice_02.jpg" alt="">
-									<span class="c-layer-yellow"></span>
-								</figure>
-								<div class="p-card-voice__block">
-									<span class="p-card-voice__position">デザイナー</span>
-									<div class="p-card-voice__date">2010年1月入社</div>
-									<h3 class="p-card-voice__name">山田 二郎</h3>
-									<div class="p-card-voice__kana">yamada jiro</div>
-								</div>
-							</li>
-							<li class="p-voice__item p-card-voice">
-								<figure class="p-card-voice__img c-image-show js-inview">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_voice_03.jpg" alt="">
-									<span class="c-layer-yellow"></span>
-								</figure>
-								<div class="p-card-voice__block">
-									<span class="p-card-voice__position">プログラマー</span>
-									<div class="p-card-voice__date">2018年3月入社</div>
-									<h3 class="p-card-voice__name">山田 三郎</h3>
-									<div class="p-card-voice__kana">yamada saburo</div>
-								</div>
-							</li>
-							<li class="p-voice__item p-card-voice">
-								<figure class="p-card-voice__img c-image-show js-inview">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_voice_04.jpg" alt="">
-									<span class="c-layer-yellow"></span>
-								</figure>
-								<div class="p-card-voice__block">
-									<span class="p-card-voice__position">営業</span>
-									<div class="p-card-voice__date">2008年8月入社</div>
-									<h3 class="p-card-voice__name">山田 四郎</h3>
-									<div class="p-card-voice__kana">yamada siro</div>
-								</div>
-							</li>
-							<li class="p-voice__item p-card-voice">
-								<figure class="p-card-voice__img c-image-show js-inview">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_voice_05.jpg" alt="">
-									<span class="c-layer-yellow"></span>
-								</figure>
-								<div class="p-card-voice__block">
-									<span class="p-card-voice__position">デザイナー</span>
-									<div class="p-card-voice__date">2013年9月入社</div>
-									<h3 class="p-card-voice__name">山田 吾郎</h3>
-									<div class="p-card-voice__kana">yamada goro</div>
-								</div>
-							</li>
-							<li class="p-voice__item p-card-voice">
-								<figure class="p-card-voice__img c-image-show js-inview">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/culture_voice_06.jpg" alt="">
-									<span class="c-layer-yellow"></span>
-								</figure>
-								<div class="p-card-voice__block">
-									<span class="p-card-voice__position">営業</span>
-									<div class="p-card-voice__date">2020年12月入社</div>
-									<h3 class="p-card-voice__name">山田 六郎</h3>
-									<div class="p-card-voice__kana">yamada rokuro</div>
-								</div>
-							</li>
+						<ul class="p-employee__items p-lists-grid-03-noGap">
+
+							<!-- SCF繰り返しフィールド -->
+							<?php $employees = SCF::get('employee_items'); ?>
+							<!-- <?php var_dump($employee); ?> -->
+							<?php foreach($employees as $employee): ?>
+								<li class="p-employee__item p-card-employee">
+									<figure class="p-card-employee__img c-image-show js-inview">
+										<img src="<?php echo wp_get_attachment_url($employee['employee_image']); ?>" alt="<?php echo $employee['employee_name']; ?>">
+										<span class="c-layer-yellow"></span>
+									</figure>
+									<div class="p-card-employee__block">
+										<span class="p-card-employee__position"><?php echo $employee['employee_position']; ?></span>
+										<div class="p-card-employee__date"><?php echo $employee['employee_date']; ?>入社</div>
+										<h3 class="p-card-employee__name"><?php echo $employee['employee_name']; ?></h3>
+										<div class="p-card-employee__kana"><?php echo $employee['employee_kana']; ?></div>
+									</div>
+								</li>
+							<?php endforeach; ?>
+							<!-- SCF 繰り返しフィールド -->
+
 						</ul>
 					</div>
-				</section><!-- l-voice -->
+				</section><!-- l-employee -->
 
 				<!-- l-contact -->
 				<?php get_template_part('template-parts/content', 'contact'); ?>

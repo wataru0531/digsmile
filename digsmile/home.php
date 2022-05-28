@@ -9,7 +9,7 @@ $blog = esc_url(home_url('blog'));
 $contact = esc_url(home_url('contact'));
 ?>
 <?php 
-var_dump($wp_query);
+// var_dump($wp_query);
 // var_dump($posts);
 
 ?>
@@ -32,30 +32,32 @@ var_dump($wp_query);
 				</div>
 			</div><!-- l-mv-sub -->
 
-			<div class="l-breadcrumb p-breadcrumb">
-				<div class="p-breadcrumb__inner l-inner">
-					<span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="">
-							<span property="name">トップ</span>
-						</a>
-					</span>&nbsp;&gt;&nbsp; <span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="current-item">
-							<span property="name">BLOG</span>
-						</a>
-					</span>
-				</div>
-			</div>
+			<!-- l-breadcrumb -->
+			<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+			<!-- l-breadcrumb -->
+			
+			<!-- l-taxonomy-list -->
 			<div class="l-taxonomy-list p-taxonomy-list">
 				<div class="p-taxonomy-list__inner l-inner">
 					<div class="p-taxonomy-list__items">
-						<a class="p-taxonomy-list__item c-btn-taxonomy js-current is-current" href="">ALL</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">Marketing</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">Project</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">Entertainment</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">Event</a>
+						<a class="p-taxonomy-list__item c-btn-taxonomy <?php if(is_home()){ echo 'is-current'; } ?>" href="<?php echo $blog; ?>">ALL</a>
+						<?php 
+						// カテゴリー全取得
+						$categories = get_categories();
+						// var_dump($categories);
+						$category_name = get_query_var('category_name');
+						// var_dump($queryVarCategory);
+						?>
+						<?php foreach($categories as $category): ?>
+							<!-- カテゴリーのslug名とwp_queryオブジェクトのcategoryの名前とが合致すればis-currentを付与する。 -->
+							<a class="p-taxonomy-list__item c-btn-taxonomy <?php if($category->slug === $category_name){ echo 'is-current'; } ?> " href="<?php echo get_category_link($category->term_id); ?>">
+								<?php echo $category->name; ?>
+							</a>
+						<?php endforeach; ?>
+
 					</div>
 				</div>
-			</div>
+			</div><!-- l-taxonomy-list -->
 
 			<!-- l-container-blog -->
 			<div class="l-container-blog p-container-blog l-min-height">
@@ -70,7 +72,7 @@ var_dump($wp_query);
 
 										<?php if(have_posts()): ?>
 											<?php while(have_posts()): the_post(); ?>
-												<a class="p-blog-archive__item p-card-blog" href="../single-blog/single-blog.html">
+												<a class="p-blog-archive__item p-card-blog" href="<?php the_permalink(); ?>">
 													<figure class="p-card-blog__img c-image-show js-inview">
 														<?php 
 															$attach_id = get_post_thumbnail_id($post->ID);
@@ -100,25 +102,18 @@ var_dump($wp_query);
 													</div>
 												</a>
 											<?php endwhile; ?>
+
+											<!-- l-pagination -->
+											<?php get_template_part('template-parts/content', 'pagination'); ?>
+											<!-- l-pagination -->
+
 										<?php endif; ?>
 										
 									</div>
 								</div>
 							</section><!-- l-blog-archive -->
-						</main>
 
-						<div class="l-pagination p-pagination">
-							<div class="p-pagination__inner l-inner">
-								<div class="p-pagination__block">
-									<a class="prev page-numbers" href="">PREV</a>
-									<a class="page-numbers" href="">1</a>
-									<span aria-current="page" class="page-numbers current">2</span>
-									<a class="page-numbers" href="">3</a>
-									<a class="page-numbers" href="">4</a>
-									<a class="next page-numbers" href="">NEXT</a>
-								</div>
-							</div>
-						</div>
+						</main>
 					</div>
 
 					<!-- l-sidebar-blog -->

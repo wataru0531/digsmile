@@ -5,11 +5,6 @@
 ********************************************************/
 @use './global/' as *;
 
-.p-works-single{
-
-}
-
-
 .p-works-single__inner{
   @include mq('tab'){
     display: flex;
@@ -134,19 +129,22 @@
 }
 
 .p-works-single__comment{
-  margin-top: rem(70);
+  margin-top: rem(40);
   font-weight: 500;
   font-size: rem(16);
   line-height: 1.5;
   letter-spacing: normal;
   color: $text;
-
-  @include mq('tab'){
-    margin-top: rem(120);
-  }
 }
 
 .p-works-single__introduction-list{
   margin-top: rem(32);
 }
 
+.p-works-single__swiper-main{
+
+}
+
+.p-works-single__swiper-thumb{
+  
+}

@@ -11,6 +11,9 @@
 }
 .c-image-show.is-inview img{
   // opacity: 1;
-  @include animation($name: imageShow);
+  @include animation(
+    $name: imageShow,
+    $timing-function: ease-in-out,
+    );
 }
 

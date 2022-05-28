@@ -9,7 +9,7 @@ $blog = esc_url(home_url('blog'));
 $contact = esc_url(home_url('contact'));
 ?>
 <?php 
-var_dump($wp_query);
+// var_dump($wp_query);
 
 ?>
 
@@ -32,29 +32,22 @@ var_dump($wp_query);
 				</div>
 			</div><!-- l-mv-sub -->
 
-			<div class="l-breadcrumb p-breadcrumb">
-				<div class="p-breadcrumb__inner l-inner">
-					<span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="">
-							<span property="name">トップ</span>
-						</a>
-					</span>&nbsp;&gt;&nbsp; <span property="itemListElement" typeof="ListItem">
-						<a property="item" typeof="WebPage" title="" href="" class="current-item">
-							<span property="name">制作実績</span>
-						</a>
-					</span>
-				</div>
-			</div>
+			<!-- l-breadcrumb -->
+			<?php get_template_part('template-parts/content', 'breadcrumb'); ?>
+			<!-- l-breadcrumb -->
 
 			<div class="l-taxonomy-list p-taxonomy-list">
 				<div class="p-taxonomy-list__inner l-inner">
 					<div class="p-taxonomy-list__items">
-						<a class="p-taxonomy-list__item c-btn-taxonomy js-current is-current" href="">ALL</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">WEB</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">LP</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">DTP</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">STUDIO</a>
-						<a class="p-taxonomy-list__item c-btn-taxonomy" href="">STUDIO</a>
+						<a class="p-taxonomy-list__item c-btn-taxonomy <?php if(is_post_type_archive('works')){ echo 'is-current'; } ?>" href="<?php echo $works; ?>">ALL</a>
+						<?php 
+							$taxonomy_terms = get_terms('works-cat');
+							// var_dump($taxonomy_terms);
+							$queryVarTerm = get_query_var('term');
+						?>
+						<?php foreach($taxonomy_terms as $taxonomy_term): ?>
+							<a class="p-taxonomy-list__item c-btn-taxonomy" href="<?php echo get_term_link($taxonomy_term); ?>"><?php echo $taxonomy_term->name; ?></a>
+						<?php endforeach; ?>
 					</div>
 				</div>
 			</div>
@@ -69,13 +62,13 @@ var_dump($wp_query);
 								<?php while(have_posts()): the_post(); ?>
 									<a class="p-works-archive__item p-card-works" href="<?php the_permalink(); ?>">
 										<figure class="p-card-works__img c-image-show js-inview">
+											<!-- SCF繰り返しフィールド1枚目のみ表示 -->
 											<?php 
-												$attach_id = get_post_thumbnail_id($post->id);
-												$image = wp_get_attachment_image_src($attach_id, 'full');
-												// var_dump($image);
+												$works_images = SCF::get('works_images');
+												// var_dump($works_images);
 											?>
-											<?php if($image): ?>
-												<img src="<?php echo $image[0]; ?>" alt="<?php the_title_attribute(); ?>">
+											<?php if($works_images[0]['works_image']): ?>
+												<img src="<?php echo wp_get_attachment_url($works_images[0]['works_image'], 'full'); ?>" alt="<?php the_title_attribute(); ?>">
 											<?php else: ?>
 												<img src="<?php echo get_template_directory_uri(); ?>/assets/images/works-default.jpg" alt="">
 											<?php endif; ?>
@@ -99,22 +92,13 @@ var_dump($wp_query);
 								<?php endwhile; ?>
 							<?php endif; ?>
 
-							
 						</div>
 					</div>
 				</section>
-				<div class="l-pagination p-pagination">
-					<div class="p-pagination__inner l-inner">
-						<div class="p-pagination__block">
-							<a class="prev page-numbers" href="">PREV</a>
-							<a class="page-numbers" href="">1</a>
-							<span aria-current="page" class="page-numbers current">2</span>
-							<a class="page-numbers" href="">3</a>
-							<a class="page-numbers" href="">4</a>
-							<a class="next page-numbers" href="">NEXT</a>
-						</div>
-					</div>
-				</div>
+						
+				<!-- l-pagination -->
+				<?php get_template_part('template-parts/content', 'pagination'); ?>
+				<!-- l-pagination -->
 				
 				<!-- l-contact -->
 				<?php get_template_part('template-parts/content', 'contact'); ?>

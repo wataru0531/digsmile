@@ -1,20 +1,8 @@
-import { showAlert } from './sub';
 
-// import LocomotiveScroll from 'locomotive-scroll';
 import Swiper from 'swiper/bundle';
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 
-
-showAlert();
-
-const b = 1;
-console.log(b);
-
-const a = 1;
-console.log(a);
-
-console.log('テスト');
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -80,76 +68,61 @@ document.addEventListener('DOMContentLoaded', function () {
   /********************************************************
   * 制作実績詳細ページswiper
   *********************************************************/
+  // サブとメインで枚数を合わせる。
+  // スクロールバーは、slidesPerViewに指定の数以上の枚数で出現。
+
+  // サブ
+  const subOptions = {
+    slidesPerView: 4,
+    spaceBetween: 8,
+    grabCursor: true,
+    scrollbar: {
+      el: '.js-swiper-thumb .swiper-scrollbar',
+      draggable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 8,
+      },
+    },
+  };
+  const subSwiper = new Swiper('.js-swiper-thumb', subOptions); // eslint-disable-line
+
   // メイン
   const mainOptions = {
-    direction: 'horizontal',
-    speed: 2000,
+    // direction: 'horizontal',
+    speed: 500,
     effect: 'fade',
-    spaceBetween: 0,
-    slidesPerView: 1,
-    slidesPerGroup: 1, // 一度にスライドさせる枚数
-    centeredSlides: true,
+    fadeEffect: {
+      crossFade: true, // スライド内に透明な余白がある場合、下の余白が見えないようにする。
+    },
+    navigation: {
+      nextEl: '.js-swiper-main .swiper-button-next',
+      prevEl: '.js-swiper-main .swiper-button-prev',
+    },
+    thumbs: {
+      swiper: subSwiper, // eslint-disable-line
+    },
+    // spaceBetween: 0,
+    // slidesPerView: 1,
+    // slidesPerGroup: 1, // 一度にスライドさせる枚数
+    // centeredSlides: true,
     loop: true,
     // breakpoints: {},
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false, // true...操作あれば停止
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-      renderBullet: function(index, className){
-				return '<div class="' + className + '">' + (index + 1) + '</div>';
-			}
-    }
+    // autoplay: {
+    //   delay: 2000,
+    //   disableOnInteraction: false, // true...操作あれば停止
+    // },
+    // pagination: {
+    //   el: '.swiper-pagination',
+    //   type: 'bullets',
+    //   clickable: true,
+    //   renderBullet: function(index, className){
+		// 		return '<div class="' + className + '">' + (index + 1) + '</div>';
+		// 	}
+    // },
   };
-  const mainSwiperSlides = document.querySelectorAll('.js-swiper-main .swiper-slide');
-  if(mainSwiperSlides.length >= 1){
-    const mainSwiper = new Swiper('.js-swiper-main', mainOptions);  // eslint-disable-line
-  }
-
-  // サブ01
-  const sub01Option = {
-    direction: 'horizontal',
-    speed: 2000,
-    effect: 'fade',
-    spaceBetween: 0,
-    slidesPerView: 1,
-    slidesPerGroup: 1, // 一度にスライドさせる枚数
-    centeredSlides: true,
-    loop: true,
-    // breakpoints: {},
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-  };
-  const sub01SwiperSlides = document.querySelectorAll('.js-swiper-sub01 .swiper-slide');
-  if(sub01SwiperSlides.length >= 1){
-    const sub01Swiper = new Swiper('.js-swiper-sub01', sub01Option);  // eslint-disable-line
-  }
-
-  // サブ02
-  const sub02Option = {
-    direction: 'horizontal',
-    speed: 2000,
-    effect: 'fade',
-    spaceBetween: 0,
-    slidesPerView: 1,
-    slidesPerGroup: 1, // 一度にスライドさせる枚数
-    centeredSlides: true,
-    loop: true,
-    // breakpoints: {},
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-  };
-  const sub02SwiperSlides = document.querySelectorAll('.js-swiper-sub02 .swiper-slide');
-  if(sub02SwiperSlides.length >= 1){
-    const sub02Swiper = new Swiper('.js-swiper-sub02', sub02Option);  // eslint-disable-line
-  }
+  const mainSwiper = new Swiper('.js-swiper-main', mainOptions);  // eslint-disable-line
 
   /********************************************************
   * トップに戻るボタン、メインビジュアル通過後にis-show付与。

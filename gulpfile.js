@@ -317,7 +317,7 @@ module.exports = {
   sass: sassCompile,
   bundle: bundleJs,
   image: imageCompress,
-  // webp...webpの処理は単独で行う。開発時も商用時も入れない。
+  // webp...webpの処理は単独で行う。開発時もビルド時も入れない。
   webp: webpConvert,
   // コピー
   copyImage: copyImage,

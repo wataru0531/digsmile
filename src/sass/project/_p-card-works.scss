@@ -6,7 +6,9 @@
 @use './global/' as *;
 
 .p-card-works{
-  display: block;
+  // display: block;
+  display: flex;
+  flex-direction: column;
 }
 
 .p-card-works__img{
@@ -32,6 +34,7 @@
 }
 
 .p-card-works__body{
+  flex: 1;
   padding-top: rem(10);
   padding-bottom: rem(10);
 }
